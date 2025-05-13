@@ -41,6 +41,7 @@ public class ProductManager {
         Product p=getproductid(index);
         if(p!=null){
             products.remove(p);
+            cart.remove(p);
             System.out.println("product is removed successfully");
 
         }
@@ -75,7 +76,7 @@ public class ProductManager {
     }
 
     public void viewcart(){
-        if(products.isEmpty() || cart.isEmpty()){
+        if(cart.isEmpty()){
             System.out.println("The Cart is Empty");
         }
         else{
