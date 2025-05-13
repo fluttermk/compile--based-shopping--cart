@@ -51,14 +51,13 @@ public class ProductManager {
 
     public void Addproduct_cart(String index){
         Product p=getproductid(index);
-        if(p!=null){
-          cart.add(p);
-          System.out.println("The item is added in cart");
-        }
-        else{
-            System.out.println("The item is not added in cart");
+       if (cart.contains(p)) {
+    System.out.println("Product already in cart.");
+} else {
+    cart.add(p);
+    System.out.println("Product added to cart.");
+}
 
-        }
  
 
     }
@@ -76,7 +75,7 @@ public class ProductManager {
     }
 
     public void viewcart(){
-        if(cart.isEmpty()){
+        if(products.isEmpty() || cart.isEmpty()){
             System.out.println("The Cart is Empty");
         }
         else{
@@ -87,7 +86,7 @@ public class ProductManager {
     }
     public void viewproduct(){
         if(products.isEmpty()){
-            System.out.println("The Cart is Empty");
+            System.out.println("No products are Availabe");
         }
         else{
             for(Product p:products){
